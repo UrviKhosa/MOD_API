@@ -13,7 +13,7 @@ namespace MOD_TEST
     public class TestUserLogic
     {
         [Test]
-        public void GetById()
+        public void gId()
         {
             UserLogic userLogic = new UserLogic();
             UserDtl user = userLogic.GetUserById(1);
@@ -26,20 +26,17 @@ namespace MOD_TEST
             UserLogic userLogic = new UserLogic();
             UserDtl user = new UserDtl()
             {
-                firstName ="Sourav",
-                lastName = "Kainth",
-                userName = "Kainth Sourav",
+                firstName ="shukla",
+                lastName = "bhaiya",
+                userName = "shukla",
                 password = "12345678",
-                email = "xx@yts.com",
-                contactNumber =9876350744,
-                linkdinUrl = "www.linkdin.com",
-                yearOfExperience = 12,
-                TrainerTechnology = "C#",
+                email = "shukla@gmail.com",
+                contactNumber =9149850424,
                 active = true,
-                role = 2,
+                role = 3,
             };
             userLogic.Register(user);
-            UserDtl user1 = userLogic.GetUserById(13);
+            UserDtl user1 = userLogic.GetUserById(12);
             Assert.IsNotNull(user1);
         }
 
@@ -76,17 +73,9 @@ namespace MOD_TEST
         public void getskillbyid()
         {
             UserLogic userLogic = new UserLogic();
-            IList<SkillDtl> p= userLogic.GetSkillById(12);
+            IList<SkillDtl> p= userLogic.GetSkillById(2);
             Assert.IsNotNull(p);
         }
-        [Test]
-        public void Delete()
-        {
-            UserLogic userLogic = new UserLogic();
-            userLogic.DeleteSkill(21);
-            Assert.IsEmpty(userLogic.GetSkillById(21));
-        }
-
-
+  
     }
 }

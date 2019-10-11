@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MOD_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="PaymentDtls">
           <Key>
             <PropertyRef Name="id" />
@@ -12,24 +12,24 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="txtType" Type="varchar" MaxLength="50" />
           <Property Name="userId" Type="int" />
-          <Property Name="mentorId" Type="int" />
           <Property Name="skillId" Type="int" />
+          <Property Name="mentorId" Type="int" />
           <Property Name="skillName" Type="varchar" MaxLength="50" />
-          <Property Name="fees" Type="varchar" MaxLength="50" />
-          <Property Name="mentorfees" Type="varchar" MaxLength="50" />
+          <Property Name="mentorfees" Type="int" />
           <Property Name="commision" Type="varchar" MaxLength="50" />
           <Property Name="PaymentStatus" Type="bit" />
+          <Property Name="fees" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="SkillDtls">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="200" />
-          <Property Name="toc" Type="varchar" MaxLength="200" />
-          <Property Name="prerequisites" Type="varchar" MaxLength="100" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="toc" Type="varchar" MaxLength="50" />
+          <Property Name="prerequisites" Type="varchar" MaxLength="50" />
+          <Property Name="timings" Type="varchar" MaxLength="50" />
           <Property Name="fees" Type="varchar" MaxLength="50" />
-          <Property Name="timings" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TrainingDtls">
           <Key>
@@ -53,7 +53,7 @@
           <Property Name="skillname" Type="varchar" MaxLength="50" />
           <Property Name="accept" Type="bit" />
           <Property Name="rejected" Type="bit" />
-          <Property Name="PaymentStatus" Type="bit" Nullable="false" />
+          <Property Name="PaymentStatus" Type="bit" />
         </EntityType>
         <EntityType Name="UserDtls">
           <Key>
@@ -78,7 +78,7 @@
           <Property Name="TrainerTimings" Type="varchar" MaxLength="50" />
           <Property Name="TrainerTechnology" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityContainer Name="MOD_DBModelStoreContainer">
+        <EntityContainer Name="masterModelStoreContainer">
           <EntitySet Name="PaymentDtls" EntityType="Self.PaymentDtls" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SkillDtls" EntityType="Self.SkillDtls" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TrainingDtls" EntityType="Self.TrainingDtls" Schema="dbo" store:Type="Tables" />
@@ -88,7 +88,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="MOD_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="PaymentDtl">
           <Key>
             <PropertyRef Name="id" />
@@ -96,24 +96,24 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="txtType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="userId" Type="Int32" />
-          <Property Name="mentorId" Type="Int32" />
           <Property Name="skillId" Type="Int32" />
+          <Property Name="mentorId" Type="Int32" />
           <Property Name="skillName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="fees" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="mentorfees" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mentorfees" Type="Int32" />
           <Property Name="commision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PaymentStatus" Type="Boolean" />
+          <Property Name="fees" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SkillDtl">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="toc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="prerequisites" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="toc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prerequisites" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="timings" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="fees" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="timings" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TrainingDtl">
           <Key>
@@ -137,7 +137,7 @@
           <Property Name="skillname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="accept" Type="Boolean" />
           <Property Name="rejected" Type="Boolean" />
-          <Property Name="PaymentStatus" Type="Boolean" Nullable="false" />
+          <Property Name="PaymentStatus" Type="Boolean" />
         </EntityType>
         <EntityType Name="UserDtl">
           <Key>
@@ -162,7 +162,7 @@
           <Property Name="TrainerTimings" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="TrainerTechnology" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="MOD_DBEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="PaymentDtls" EntityType="Self.PaymentDtl" />
           <EntitySet Name="SkillDtls" EntityType="Self.SkillDtl" />
           <EntitySet Name="TrainingDtls" EntityType="Self.TrainingDtl" />
@@ -173,37 +173,37 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MOD_DBModelStoreContainer" CdmEntityContainer="MOD_DBEntities1">
+        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
           <EntitySetMapping Name="PaymentDtls">
-            <EntityTypeMapping TypeName="MOD_DBModel.PaymentDtl">
+            <EntityTypeMapping TypeName="masterModel.PaymentDtl">
               <MappingFragment StoreEntitySet="PaymentDtls">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="txtType" ColumnName="txtType" />
                 <ScalarProperty Name="userId" ColumnName="userId" />
-                <ScalarProperty Name="mentorId" ColumnName="mentorId" />
                 <ScalarProperty Name="skillId" ColumnName="skillId" />
+                <ScalarProperty Name="mentorId" ColumnName="mentorId" />
                 <ScalarProperty Name="skillName" ColumnName="skillName" />
-                <ScalarProperty Name="fees" ColumnName="fees" />
                 <ScalarProperty Name="mentorfees" ColumnName="mentorfees" />
                 <ScalarProperty Name="commision" ColumnName="commision" />
                 <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+                <ScalarProperty Name="fees" ColumnName="fees" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SkillDtls">
-            <EntityTypeMapping TypeName="MOD_DBModel.SkillDtl">
+            <EntityTypeMapping TypeName="masterModel.SkillDtl">
               <MappingFragment StoreEntitySet="SkillDtls">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="toc" ColumnName="toc" />
                 <ScalarProperty Name="prerequisites" ColumnName="prerequisites" />
-                <ScalarProperty Name="fees" ColumnName="fees" />
                 <ScalarProperty Name="timings" ColumnName="timings" />
+                <ScalarProperty Name="fees" ColumnName="fees" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TrainingDtls">
-            <EntityTypeMapping TypeName="MOD_DBModel.TrainingDtl">
+            <EntityTypeMapping TypeName="masterModel.TrainingDtl">
               <MappingFragment StoreEntitySet="TrainingDtls">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="status" ColumnName="status" />
@@ -228,7 +228,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserDtls">
-            <EntityTypeMapping TypeName="MOD_DBModel.UserDtl">
+            <EntityTypeMapping TypeName="masterModel.UserDtl">
               <MappingFragment StoreEntitySet="UserDtls">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="email" ColumnName="email" />

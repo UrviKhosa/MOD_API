@@ -11,12 +11,13 @@ namespace MOD_BAL
     public class UserLogic
     {
 
-        public MOD_DBEntities1 data = new MOD_DBEntities1();
+        public masterEntities data = new masterEntities();
 
         public IList<UserDtl> GetAllUsers()
         {
             try
             {
+                data.Configuration.ProxyCreationEnabled = false;
                 return data.UserDtls.ToList();
             }
             catch
@@ -30,6 +31,7 @@ namespace MOD_BAL
         {
             try
             {
+                data.Configuration.ProxyCreationEnabled = false;
                 return data.UserDtls.Find(id);
             }
             catch
@@ -191,6 +193,7 @@ namespace MOD_BAL
         {
             try
             {
+                data.Configuration.ProxyCreationEnabled = false;
                 return data.SkillDtls.ToList();
             }
             catch
@@ -204,6 +207,7 @@ namespace MOD_BAL
         {
             try
             {
+                data.Configuration.ProxyCreationEnabled = false;
                 return data.SkillDtls.Where(x => x.name == id).ToList();
             }
             catch
@@ -217,6 +221,7 @@ namespace MOD_BAL
         {
             try
             {
+                data.Configuration.ProxyCreationEnabled = false;
                 return data.SkillDtls.Where(x => x.id == id).ToList();
             }
             catch
@@ -257,6 +262,7 @@ namespace MOD_BAL
         {
             try
             {
+                data.Configuration.ProxyCreationEnabled = false;
                 data.Entry(skillDtl).State = EntityState.Modified;
                 data.Configuration.ValidateOnSaveEnabled = false;
                 data.SaveChanges();
@@ -319,6 +325,7 @@ namespace MOD_BAL
         {
             try
             {
+                data.Configuration.ProxyCreationEnabled = false;
                 List<TrainingDtl> dtls = data.TrainingDtls.ToList();
                 return dtls;
             }
@@ -413,6 +420,7 @@ namespace MOD_BAL
         {
             try
             {
+                data.Configuration.ProxyCreationEnabled = false;
                 IList<PaymentDtl> dtl = data.PaymentDtls.ToList();
                 return dtl;
             }

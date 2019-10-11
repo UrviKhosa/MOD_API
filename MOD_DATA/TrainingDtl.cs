@@ -32,6 +32,6 @@ namespace MOD_DATA
         public string skillname { get; set; }
         public Nullable<bool> accept { get; set; }
         public Nullable<bool> rejected { get; set; }
-        public bool PaymentStatus { get; set; }
+        public Nullable<bool> PaymentStatus { get; set; }
     }
 }

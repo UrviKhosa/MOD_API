@@ -17,12 +17,12 @@ namespace MOD_DATA
         public int id { get; set; }
         public string txtType { get; set; }
         public Nullable<int> userId { get; set; }
-        public Nullable<int> mentorId { get; set; }
         public Nullable<int> skillId { get; set; }
+        public Nullable<int> mentorId { get; set; }
         public string skillName { get; set; }
-        public string fees { get; set; }
-        public string mentorfees { get; set; }
+        public Nullable<int> mentorfees { get; set; }
         public string commision { get; set; }
         public Nullable<bool> PaymentStatus { get; set; }
+        public string fees { get; set; }
     }
 }
