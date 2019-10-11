@@ -26,7 +26,7 @@ namespace MOD_TEST
             UserLogic userLogic = new UserLogic();
             UserDtl user = new UserDtl()
             {
-                firstName ="shukla",
+                firstName ="shuklai",
                 lastName = "bhaiya",
                 userName = "shukla",
                 password = "12345678",
